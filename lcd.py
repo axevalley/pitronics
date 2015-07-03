@@ -21,8 +21,7 @@ class LCD:
         self.char = True
         self.cmd = False
         
-        self.line_1 = 0x80 # LCD RAM address for the 1st line
-        self.line_2 = 0xC0 # LCD RAM address for the 2nd line
+        self.line = [0x80, 0xC0]
         
         self.send_byte(0x33, self.cmd) # 110011 Initialise
         self.send_byte(0x32, self.cmd) # 110010 Initialise
@@ -82,12 +81,12 @@ class LCD:
         self.pin_e.low()
         time.sleep(self.delay)
         
-    def write(string, line):
+    def write(self, string, line):
         # Send string to display
        
         string = string.ljust(self.width ," ")
        
-        self.send_byte(line, self.cmd)
+        self.send_byte(self.line[line], self.cmd)
        
         for i in range(self.width):
             self.send_byte(ord(string[i]),self.char)
