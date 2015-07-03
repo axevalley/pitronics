@@ -24,12 +24,12 @@ class LCD:
         self.line_1 = 0x80 # LCD RAM address for the 1st line
         self.line_2 = 0xC0 # LCD RAM address for the 2nd line
         
-        self.send_byte(0x33,LCD_CMD) # 110011 Initialise
-        self.send_byte(0x32,LCD_CMD) # 110010 Initialise
-        self.send_byte(0x06,LCD_CMD) # 000110 Cursor move direction
-        self.send_byte(0x0C,LCD_CMD) # 001100 Display On,Cursor Off, Blink Off
-        self.send_byte(0x28,LCD_CMD) # 101000 Data length, number of lines, font size
-        self.send_byte(0x01,LCD_CMD) # 000001 Clear display
+        self.send_byte(0x33, self.cmd) # 110011 Initialise
+        self.send_byte(0x32, self.cmd) # 110010 Initialise
+        self.send_byte(0x06, self.cmd) # 000110 Cursor move direction
+        self.send_byte(0x0C, self.cmd) # 001100 Display On,Cursor Off, Blink Off
+        self.send_byte(0x28, self.cmd) # 101000 Data length, number of lines, font size
+        self.send_byte(0x01, self.cmd) # 000001 Clear display
         time.sleep(self.delay)
         
     def send_byte(self, bits, mode):
