@@ -1,3 +1,5 @@
+import RPi.GPIO as GPIO
+
 from . outpin import OutPin
 from . clock import Clock
 from . led import LED
