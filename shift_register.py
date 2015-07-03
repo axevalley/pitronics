@@ -101,9 +101,3 @@ class ShiftRegister():
 			self.write_bin(input)
 		elif isinstance(input, list):
 			self.write_array(input)
-
-gpio.setmode(gpio.BOARD)
-
-sr = ShiftRegister(registers = 2)
-		
-sr.clear()
