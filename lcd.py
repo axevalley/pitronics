@@ -1,8 +1,7 @@
 import RPi.GPIO
 import time
 
-import outpin
-import led
+from . outpin import OutPin as OutPin
 
 class LCD:
     def __init__(self, width=16, pin_rs=18, pin_e=23, pin_d4=25, pin_d5=16, pin_d6=12, pin_d7=20, pin_led=None):
@@ -12,12 +11,12 @@ class LCD:
         self.width = width
         self.delay = 0.0005
         
-        self.pin_rs = outpin.OutPin(pin_rs)
-        self.pin_e = outpin.OutPin(pin_e)
-        self.pin_d4 = outpin.OutPin(pin_d4)
-        self.pin_d5 = outpin.OutPin(pin_d5)
-        self.pin_d6 = outpin.OutPin(pin_d6)
-        self.pin_d7 = outpin.OutPin(pin_d7)
+        self.pin_rs = OutPin(pin_rs)
+        self.pin_e = OutPin(pin_e)
+        self.pin_d4 = OutPin(pin_d4)
+        self.pin_d5 = OutPin(pin_d5)
+        self.pin_d6 = OutPin(pin_d6)
+        self.pin_d7 = OutPin(pin_d7)
         
         self.char = True
         self.cmd = False
