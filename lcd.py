@@ -1,4 +1,4 @@
-import RPi.GPIO
+import RPi.GPIO as GPIO
 import time
 
 from . outpin import OutPin as OutPin
