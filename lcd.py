@@ -54,7 +54,7 @@ class LCD:
             self.pin_d7.high()
        
         # Toggle 'Enable' pin
-        self.toggle()
+        self.clock()
        
         # Low bits
         self.pin_d4.low()
@@ -71,9 +71,9 @@ class LCD:
             self.pin_d7.high()
        
         # Toggle 'Enable' pin
-        self.toggle()
+        self.clock()
         
-    def toggle(self):
+    def clock(self):
         # Toggle enable
         time.sleep(self.delay)
         self.pin_e.high()
