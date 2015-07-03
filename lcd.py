@@ -55,7 +55,7 @@ class LCD:
             self.pin_d7.high()
        
         # Toggle 'Enable' pin
-        lcd_toggle_enable()
+        self.toggle()
        
         # Low bits
         self.pin_d4.low()
@@ -72,7 +72,7 @@ class LCD:
             self.pin_d7.high()
        
         # Toggle 'Enable' pin
-        self.toggle
+        self.toggle()
         
     def toggle(self):
         # Toggle enable
