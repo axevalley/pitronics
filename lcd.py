@@ -37,7 +37,10 @@ class LCD:
         # mode = True  for character
         #        False for command
        
-        self.pin_rs, mode # RS
+        if mode == True:
+            self.pin_rs.high()
+        else:
+            self.pin_rs.low()
        
         # High bits
         self.pin_d4.low()
