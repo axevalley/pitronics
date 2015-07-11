@@ -4,25 +4,6 @@ import time
 from . outpin import OutPin as OutPin
 from . clock import Clock as Clock
 
-class OutPin():
-	def __init__(self, pin):
-		self.pin = pin
-		gpio.setup(self.pin, gpio.OUT)
-		
-	def high(self):
-		gpio.output(self.pin, gpio.HIGH)
-		
-	def low(self):
-		gpio.output(self.pin, gpio.LOW)
-		
-class Clock(OutPin):
-	def __init__(self, pin):
-		self.pin = pin
-		super().__init__(pin)
-		
-	def cycle(self):
-		self.high()
-		self.low()
 		
 class ShiftRegister():
 	def __init__(self, srclk=16, srclr=12, ser=18, rclk=22, registers=1, bits = 8):
